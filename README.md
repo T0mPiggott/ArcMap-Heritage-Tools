@@ -1,2 +1,2 @@
 # ArcMap-Heritage-Tools
-A series of scripts used by heritage department to automate certain tasks 
+The Repository contains a series of scripts that I use for daily tasks in ArcMap. 
