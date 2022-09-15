@@ -1,0 +1,18 @@
+# The script will read all mxds located in the designated folder and export them to PDFs
+
+import arcpy, os
+
+#User Input - location of the folder
+FolderLocation = arcpy.GetParameterAsText(0)
+
+arcpy.env.workspace = ws = FolderLocation
+
+mxd_list = arcpy.ListFiles("*.mxd")
+
+for mxd in mxd_list:
+    
+    current_mxd = arcpy.mapping.MapDocument(os.path.join(ws, mxd))
+    pdf_name = mxd[:-4] + ".pdf"
+    arcpy.mapping.ExportToPDF(current_mxd, pdf_name)
+ 
+del mxd_list
